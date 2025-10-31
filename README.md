@@ -26,7 +26,7 @@ Alternatively, files can be added with the "+" icon in the TabCtrl main menu.
 
 ## Installation (Python backend)
 
-The respository was tested with with Python 3.9.2.
+The respository was tested with [Python 3.9.2](https://www.python.org/downloads/release/python-392/).
 
 1. Create a virtual environment and activate it:
 
