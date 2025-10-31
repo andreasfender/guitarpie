@@ -1,0 +1,94 @@
+<div class="fretmenu" id="regionSubMenu">
+    <div class="string">
+        <div class="fret"></div>
+        <div class="fret"></div>
+        <div class="fret"></div>
+        <div class="fret"></div>
+        <div class="fret"></div>
+    </div>
+    <div class="string">
+        <div class="fret"></div>
+        <div class="fret"></div>
+        <div class="fret"></div>
+        <div class="fret"></div>
+        <div class="fret"></div>
+    </div>
+    <div class="string">
+        <div class="fret"></div>
+        <div class="fret"></div>
+        <div class="fret"></div>
+        <div class="fret"></div>
+        <div class="fret"></div>
+    </div>
+    <div class="string">
+        <div class="fret"></div>
+        <div class="fret">
+            <div
+                class="fret-marker"
+                onclick="regionMenuSetRegionStart(true)"
+                id="regionMenuSetRegionStartButton"
+                title="Set Region Start"
+            >
+                <img src="./resources/svg/light/bracket-square.svg" alt="Set Region Start" class="fret-menu-icon" />
+            </div>
+        </div>
+        <div class="fret">
+            <div
+                class="fret-marker"
+                onclick="regionMenuSetRegionEnd(true)"
+                id="regionMenuSetRegionEndButton"
+                title="Set Region End"
+            >
+                <img src="./resources/svg/light/bracket-square-right.svg" alt="Set Region End" class="fret-menu-icon" />
+            </div>
+        </div>
+        <div class="fret">
+            <div
+                class="fret-marker"
+                onclick="regionMenuClearRegion(true)"
+                id="regionMenuClearRegionButton"
+                title="Clear Region"
+            >
+                <img src="./resources/svg/light/empty-set.svg" alt="Clear Region" class="fret-menu-icon" />
+            </div>
+        </div>
+        <div class="fret"></div>
+    </div>
+    <div class="string">
+        <div class="fret"></div>
+        <div class="fret">
+            <div
+                class="fret-marker toggle-button"
+                onclick="regionMenuToggleLoop(true)"
+                id="regionMenuToggleLoopButton"
+                title="Toggle Loop"
+            >
+                <img src="./resources/codicons/light/debug-restart.svg" alt="Toggle Loop" class="fret-menu-icon" />
+            </div>
+        </div>
+        <div class="fret">
+            <div
+                class="fret-marker"
+                onclick="regionMenuSetSectionAsRegion(true)"
+                id="regionMenuSetSectionAsRegionButton"
+                title="Set Section as Region"
+            >
+                <img src="./resources/codicons/light/paintcan.svg" alt="Set Section as Region" class="fret-menu-icon" />
+            </div>
+        </div>
+        <div class="fret">
+            <div
+                class="fret-marker"
+                onclick="fretMenuToggleRegionMenu(true)"
+                id="fretMenuRegionMenuButton_2"
+                title="Toggle Region Menu"
+            >
+                <img src="./resources/svg/light/bracket.svg" alt="Toggle Region Menu" class="fret-menu-icon" />
+            </div>
+        </div>
+        <div class="fret"></div>
+    </div>
+    <div class="string"></div>
+
+    <div class="status-message" id="statusMessageRegionMenu"></div>
+</div>

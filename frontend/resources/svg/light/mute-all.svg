@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+ <g class="layer">
+  <title>Layer 1</title>
+  <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#ffffff" id="SVGRepo_iconCarrier" stroke="#000" stroke-width="0">
+   <path clip-rule="evenodd" d="m2,7.5l0,3c0,0.8 0.6,1.5 1.4,1.5l2.3,0l3.2,2.8c0.1,0.1 0.3,0.2 0.4,0.2s0.2,0 0.3,-0.1c0.2,-0.1 0.4,-0.4 0.4,-0.7l0,-0.9l-7.2,-7.2c-0.5,0.2 -0.8,0.8 -0.8,1.4zm8,2l0,-5.8c0,-0.3 -0.1,-0.5 -0.4,-0.7c-0.1,0 -0.2,0 -0.3,0s-0.3,0 -0.4,0.2l-2.8,2.5l-4.1,-4.1l-1,1l3.4,3.4l5.6,5.6l3.6,3.6l1,-1l-4.6,-4.7z" fill="#ffffff" fill-rule="evenodd" id="svg_1"/>
+  </g>
+  <text fill="#ffffff" font-family="&#x27;JetBrains Mono&#x27;" font-size="9" font-weight="bold" id="svg_4" stroke="#000" stroke-width="0" text-anchor="start" x="10.87" xml:space="preserve" y="8.28">A</text>
+ </g>
+</svg>

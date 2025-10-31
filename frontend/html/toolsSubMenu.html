@@ -1,0 +1,83 @@
+<div class="fretmenu" id="toolsSubMenu">
+    <div class="string">
+        <div class="fret"></div>
+        <div class="fret"></div>
+        <div class="fret"></div>
+        <div class="fret"></div>
+        <div class="fret"></div>
+    </div>
+    <div class="string">
+        <div class="fret"></div>
+        <div class="fret">
+            <div class="fret-marker" onclick="fretMenuZoomMinus(true)" id="fretMenuZoomMinusButton" title="Zoom Out">
+                <img src="./resources/svg/light/zoom-minus.svg" alt="Zoom Out" class="fret-menu-icon" />
+            </div>
+        </div>
+        <div class="fret">
+            <div class="fret-marker" onclick="fretMenuZoomPlus(true)" id="fretMenuZoomPlusButton" title="Zoom In">
+                <img src="./resources/svg/light/zoom-plus.svg" alt="Zoom In" class="fret-menu-icon" />
+            </div>
+        </div>
+        <div class="fret">
+            <div class="fret-marker toggle-button" onclick="fretMenuToggleCountIn(true)" id="fretMenuCountInButton"
+                title="Toggle Count In">
+                <img src="./resources/svg/light/count.svg" alt="Toggle Count In" class="fret-menu-icon" />
+            </div>
+        </div>
+        <div class="fret"></div>
+    </div>
+    <div class="string">
+        <div class="fret"></div>
+        <div class="fret">
+            <div class="fret-marker" onclick="fretMenuTempoMinus(true)" id="fretMenuTempoMinusButton"
+                title="Tempo Down">
+                <img src="./resources/svg/light/music-note-minus.svg" alt="Tempo Down" class="fret-menu-icon" />
+            </div>
+        </div>
+        <div class="fret">
+            <div class="fret-marker" onclick="fretMenuTempoPlus(true)" id="fretMenuTempoPlusButton" title="Tempo Up">
+                <img src="./resources/svg/light/music-note-plus.svg" alt="Tempo Up" class="fret-menu-icon" />
+            </div>
+        </div>
+        <div class="fret">
+            <div class="fret-marker" onclick="fretMenuToggleToolsMenu(true)" id="fretMenuToolsButton_2"
+                title="Toggle Tool Menu">
+                <img src="./resources/codicons/light/tools.svg" alt="Toggle Tool Menu" class="fret-menu-icon" />
+            </div>
+        </div>
+        <div class="fret"></div>
+    </div>
+    <div class="string">
+        <div class="fret"></div>
+        <div class="fret">
+            <div class="fret-marker" onclick="fretMenuVolumeMinus(true)" id="fretMenuVolumeMinusButton"
+                title="Volume Down">
+                <img src="./resources/svg/light/volume-low.svg" alt="Volume Down" class="fret-menu-icon"
+                    style="width: 25px" />
+            </div>
+        </div>
+        <div class="fret">
+            <div class="fret-marker" onclick="fretMenuVolumePlus(true)" id="fretMenuVolumePlusButton" title="Volume Up">
+                <img src="./resources/svg/light/volume-high.svg" alt="Volume Up" class="fret-menu-icon"
+                    style="width: 25px" />
+            </div>
+        </div>
+        <div class="fret">
+            <div class="fret-marker toggle-button" onclick="fretMenuToggleMetronome(true)" id="fretMenuMetronomeButton"
+                title="Toggle Metronome">
+                <img src="./resources/svg/light/metronome.svg" alt="Toggle Metronome" class="fret-menu-icon" />
+            </div>
+        </div>
+        <div class="fret"></div>
+    </div>
+    <div class="string">
+        <div class="fret"></div>
+        <div class="fret"></div>
+        <div class="fret"></div>
+        <div class="fret"></div>
+        <div class="fret"></div>
+    </div>
+    <div class="string"></div>
+
+    <div class="status-message" id="statusMessageToolsMenu"></div>
+</div>

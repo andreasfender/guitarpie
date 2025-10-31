@@ -1,0 +1,89 @@
+<div class="fretmenu" id="fretMenu">
+    <div class="string">
+        <div class="fret"></div>
+        <div class="fret"></div>
+        <div class="fret"></div>
+        <div class="fret"></div>
+        <div class="fret"></div>
+    </div>
+    <div class="string">
+        <div class="fret"></div>
+        <div class="fret">
+            <div class="fret-marker" onclick="fretMenuStopSong(true)" id="fretMenuStopButton" title="Back to Start">
+                <img src="./resources/codicons/light/debug-reverse-continue.svg" alt="Back to Start"
+                    class="fret-menu-icon" />
+            </div>
+        </div>
+        <div class="fret">
+            <div class="fret-marker" onclick="fretMenuTogglePlayPause(true)" id="fretMenuPlayPauseButton"
+                title="Play/Pause">
+                <img src="./resources/codicons/light/play.svg" alt="Play/Pause" class="fret-menu-icon"
+                    id="playPauseIconFretMenu" />
+            </div>
+        </div>
+        <div class="fret">
+            <div class="fret-marker" onclick="fretMenuToggleToolsMenu(true)" id="fretMenuToolsButton"
+                title="Toggle Tool Menu">
+                <img src="./resources/codicons/light/tools.svg" alt="Toggle Tool Menu" class="fret-menu-icon" />
+            </div>
+        </div>
+        <div class="fret"></div>
+    </div>
+    <div class="string">
+        <div class="fret">
+            <div class="fret-marker" onclick="fretMenuJumpSectionBackward(true)" id="fretMenuJumpSectionBackwardButton"
+                title="Jump Section Backward">
+                <img src="./resources/codicons/light/arrow-left.svg" alt="Jump Section Backward"
+                    class="fret-menu-icon" />
+            </div>
+        </div>
+        <div class="fret">
+            <div class="fret-marker" onclick="fretMenuJumpBackward(true)" id="fretMenuJumpBackwardButton"
+                title="Jump Backward">
+                <img src="./resources/codicons/light/chevron-left.svg" alt="Jump Backward" class="fret-menu-icon" />
+            </div>
+        </div>
+        <div class="fret">
+            <div class="fret-marker" onclick="_fretMenuClose(true)" id="fretMenuCloseButton" title="Close Fret Menu">
+                <img src="./resources/codicons/light/close.svg" alt="Close Fret Menu" class="fret-menu-icon" />
+            </div>
+        </div>
+        <div class="fret">
+            <div class="fret-marker" onclick="fretMenuJumpForward(true)" id="fretMenuJumpForwardButton"
+                title="Jump Forward">
+                <img src="./resources/codicons/light/chevron-right.svg" alt="Jump Forward" class="fret-menu-icon" />
+            </div>
+        </div>
+        <div class="fret">
+            <div class="fret-marker" onclick="fretMenuJumpSectionForward(true)" id="fretMenuJumpSectionForwardButton"
+                title="Jump Section Forward">
+                <img src="./resources/codicons/light/arrow-right.svg" alt="Jump Section Forward"
+                    class="fret-menu-icon" />
+            </div>
+        </div>
+    </div>
+    <div class="string">
+        <div class="fret"></div>
+        <div class="fret">
+            <div class="fret-marker" onclick="fretMenuToggleTrackMenu(true)" id="fretMenuTrackMenuButton"
+                title="Toggle Track Menu">
+                <img src="./resources/svg/light/guitar.svg" alt="Toggle Track Menu" class="fret-menu-icon" />
+            </div>
+        </div>
+        <div class="fret">
+            <div class="fret-marker" onclick="fretMenuToggleHomeMenu(true)" id="fretMenuHomeButton" title="Home Button">
+                <img src="./resources/codicons/light/home.svg" alt="Home Button" class="fret-menu-icon" />
+            </div>
+        </div>
+        <div class="fret">
+            <div class="fret-marker" onclick="fretMenuToggleRegionMenu(true)" id="fretMenuRegionMenuButton"
+                title="Toggle Region Menu">
+                <img src="./resources/svg/light/bracket.svg" alt="Toggle Region Menu" class="fret-menu-icon" />
+            </div>
+        </div>
+        <div class="fret"></div>
+    </div>
+    <div class="string"></div>
+
+    <div class="status-message" id="statusMessageFretMenu"></div>
+</div>

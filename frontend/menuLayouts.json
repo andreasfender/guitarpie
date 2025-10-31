@@ -1,0 +1,212 @@
+[
+    {
+        "id": "fretMenu",
+        "status": "statusMessageFretMenu",
+        "options": [
+            {
+                "string": 3,
+                "fret": 2,
+                "action": "fretMenuStopSong"
+            },
+            {
+                "string": 3,
+                "fret": 3,
+                "action": "fretMenuTogglePlayPause"
+            },
+            {
+                "string": 3,
+                "fret": 4,
+                "action": "fretMenuToggleToolsMenu"
+            },
+            {
+                "string": 4,
+                "fret": 1,
+                "action": "fretMenuJumpSectionBackward"
+            },
+            {
+                "string": 4,
+                "fret": 2,
+                "action": "fretMenuJumpBackward"
+            },
+            {
+                "string": 4,
+                "fret": 3,
+                "action": "fretMenuClose"
+            },
+            {
+                "string": 4,
+                "fret": 4,
+                "action": "fretMenuJumpForward"
+            },
+            {
+                "string": 4,
+                "fret": 5,
+                "action": "fretMenuJumpSectionForward"
+            },
+            {
+                "string": 5,
+                "fret": 2,
+                "action": "fretMenuToggleTrackMenu"
+            },
+            {
+                "string": 5,
+                "fret": 3,
+                "action": "fretMenuToggleHomeMenu"
+            },
+            {
+                "string": 5,
+                "fret": 4,
+                "action": "fretMenuToggleRegionMenu"
+            }
+        ]
+    },
+    {
+        "id": "homeSubMenu",
+        "status": "statusMessageHomeMenu",
+        "options": [
+            {
+                "string": 5,
+                "fret": 2,
+                "action": "homeMenuConfirm"
+            },
+            {
+                "string": 5,
+                "fret": 3,
+                "action": "homeMenuToggleHomeMenu"
+            },
+            {
+                "string": 5,
+                "fret": 4,
+                "action": "homeMenuCancel"
+            }
+        ]
+    },
+    {
+        "id": "regionSubMenu",
+        "status": "statusMessageRegionMenu",
+        "options": [
+            {
+                "string": 4,
+                "fret": 2,
+                "action": "regionMenuSetRegionStart"
+            },
+            {
+                "string": 4,
+                "fret": 3,
+                "action": "regionMenuSetRegionEnd"
+            },
+            {
+                "string": 4,
+                "fret": 4,
+                "action": "regionMenuClearRegion"
+            },
+            {
+                "string": 5,
+                "fret": 2,
+                "action": "regionMenuToggleLoop"
+            },
+            {
+                "string": 5,
+                "fret": 3,
+                "action": "regionMenuSetSectionAsRegion"
+            },
+            {
+                "string": 5,
+                "fret": 4,
+                "action": "regionMenuToggleRegionMenu"
+            }
+        ]
+    },
+    {
+        "id": "toolsSubMenu",
+        "status": "statusMessageToolsMenu",
+        "options": [
+            {
+                "string": 2,
+                "fret": 2,
+                "action": "fretMenuZoomMinus"
+            },
+            {
+                "string": 2,
+                "fret": 3,
+                "action": "fretMenuZoomPlus"
+            },
+            {
+                "string": 2,
+                "fret": 4,
+                "action": "fretMenuToggleCountIn"
+            },
+            {
+                "string": 3,
+                "fret": 2,
+                "action": "fretMenuTempoMinus"
+            },
+            {
+                "string": 3,
+                "fret": 3,
+                "action": "fretMenuTempoPlus"
+            },
+            {
+                "string": 3,
+                "fret": 4,
+                "action": "toolsMenuToggleToolsMenu"
+            },
+            {
+                "string": 4,
+                "fret": 2,
+                "action": "fretMenuVolumeMinus"
+            },
+            {
+                "string": 4,
+                "fret": 3,
+                "action": "fretMenuVolumePlus"
+            },
+            {
+                "string": 4,
+                "fret": 4,
+                "action": "fretMenuToggleMetronome"
+            }
+        ]
+    },
+    {
+        "id": "trackSubMenu",
+        "status": "statusMessageTrackMenu",
+        "options": [
+            {
+                "string": 4,
+                "fret": 2,
+                "action": "trackMenuSoloSelected"
+            },
+            {
+                "string": 4,
+                "fret": 3,
+                "action": "trackMenuMoveSelectionUp"
+            },
+            {
+                "string": 4,
+                "fret": 4,
+                "action": "trackMenuMuteSelected"
+            },
+            {
+                "string": 5,
+                "fret": 2,
+                "action": "trackMenuToggleTrackMenu"
+            },
+            {
+                "string": 5,
+                "fret": 3,
+                "action": "trackMenuMoveSelectionDown"
+            },
+            {
+                "string": 5,
+                "fret": 4,
+                "action": "trackMenuMuteAll"
+            }
+        ]
+    },
+    {
+        "id": "unusedOptions",
+        "status": "statusMessageUnused",
+        "options": [        ]
+    }
+]

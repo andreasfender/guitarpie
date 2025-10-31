@@ -1,0 +1,374 @@
+@keyframes slideInFromBottom {
+    from {
+        transform: translateY(100%);
+        /* Start off-screen */
+        opacity: 0;
+        /* Start invisible */
+    }
+
+    to {
+        transform: translateY(0);
+        /* End at the original position */
+        opacity: 1;
+        /* Fully visible */
+    }
+}
+
+@keyframes slideOutToBottom {
+    from {
+        translate: translateY(0);
+        /* Start at the original position */
+        opacity: 1;
+        /* Fully visible */
+    }
+
+    to {
+        transform: translateY(100%);
+        /* Move off-screen */
+        opacity: 0;
+        /* Become invisible */
+    }
+}
+
+.fretmenu {
+    display: none;
+    flex-direction: column;
+    /* border: 3px solid #888; */
+    border-radius: 20px;
+    position: fixed;
+    z-index: 9000;
+    width: fit-content;
+    background-color: rgba(110, 110, 110, 1);
+    /* box-shadow: -100px 0px 50px 20px rgba(255, 255, 255, 0.85), 30px 0px 50px 20px rgba(255, 255, 255, 0.85); */
+    box-shadow: 8px 8px 24px rgba(0, 0, 0, 0.5);
+    user-select: none;
+    scale: 0.7;
+    transition: all 0.2s ease;
+    right: 50px;
+    bottom: 30px;
+    transform-origin: bottom right;
+    padding: 0px 40px;
+}
+
+.string {
+    display: flex;
+    position: relative;
+    height: 60px;
+    margin: 5px 0;
+    padding-top: 1px;
+}
+
+.string::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 5px;
+    /* background: repeating-linear-gradient(45deg, transparent, transparent 10px, #999 10px, #999 20px),
+    linear-gradient(to bottom, #bbb, #666); */
+    background-color: rgb(130, 130, 130);
+    border-radius: 8px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    z-index: 2000;
+    pointer-events: none;
+}
+
+.fret {
+    /* Change width here */
+    /* width: 200px; */
+    width: 150px;
+    height: 100%;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.fret::after {
+    content: "";
+    position: absolute;
+    top: 34px;
+    bottom: -40px;
+    right: 0;
+    width: 6px;
+    background-color: #eaeaea;
+    /* /* box-shadow: inset 0px 0px 4px rgba(255, 255, 255, 0.25), 2px 0px 4px rgba(0, 0, 0, 0.5); */
+    box-shadow: inset 0px 0px 4px rgba(99, 99, 99, 0.25);
+    /* border-left: 2px solid #e6e6e6; */
+}
+
+.fret:last-child::after {
+    display: none;
+    /* Remove the last fret line */
+}
+
+.nut {
+    border-radius: 4px;
+    width: 10px;
+    height: 100%;
+    background-color: #333;
+    margin-right: 10px;
+    position: relative;
+    z-index: 2;
+}
+
+.fret-marker {
+    width: 50px;
+    height: 50px;
+    background-color: #333;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: larger;
+    color: white;
+    cursor: pointer;
+    border: 5px solid #85beff00;
+    transition: border-color ease 0.2s, background-color ease 0.2s;
+    margin-top: 4px;
+    z-index: 4000;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+.fret-marker:hover {
+    background-color: #85beff;
+}
+
+.fret-marker.highlight {
+    background-color: #85beff;
+}
+
+.fret-marker.open {
+    background-color: #638fc1;
+}
+
+.fret-marker.open.highlight {
+    background-color: #85beff;
+}
+
+.fret-marker.open:hover {
+    background-color: #85beff;
+}
+
+.toggle-button {
+    border-color: #cd7926;
+}
+
+.toggle-button:hover {
+    border-color: #f28e2c;
+}
+
+.fret-marker.active {
+    border-color: #59a14f;
+}
+
+.fret-marker.active:hover {
+    border-color: #59a14f;
+}
+
+.fret-menu-icon {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+}
+
+.string-label {
+    position: absolute;
+    left: -55px;
+    font-size: xx-large;
+    font-weight: bold;
+    color: #333;
+    margin-top: 12px;
+}
+
+.fret-numbers {
+    position: absolute;
+    top: -40px;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 75px;
+}
+
+.fret-number {
+    width: 50px;
+    height: 30px;
+    text-align: center;
+    font-size: x-large;
+    font-weight: bold;
+    font-style: italic;
+    color: #333;
+    margin-right: 150px;
+}
+
+.fret-dots {
+    position: absolute;
+    bottom: -20px;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 90px;
+}
+
+.fret-dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #33333300;
+    margin-right: 185px;
+}
+
+.second-fret-dots {
+    position: absolute;
+    bottom: -40px;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 90px;
+}
+
+.status-message {
+    position: absolute;
+    display: none;
+    text-align: center;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    z-index: 1000000;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+#shortcut-listening-indicator {
+    position: absolute;
+    bottom: -120px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(120, 0, 25);
+    font-size: xx-large;
+    font-weight: bold;
+    animation: pulse 2s infinite;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    border: 2px dashed rgb(120, 0, 25);
+    padding: 10px;
+    z-index: 9000;
+}
+
+.tracks-panel {
+    display: flex;
+    position: relative;
+    left: -260px;
+    bottom: 255px;
+    z-index: 9000;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+}
+
+.tracks {
+    display: flex;
+    flex-direction: column-reverse;
+    transition: transform 0.2s ease-in-out;
+    position: absolute;
+    width: 150px;
+    max-height: 250px;
+}
+
+.track {
+    text-align: center;
+    background-color: #999;
+    border-radius: 8px;
+    color: white;
+    padding: 10px;
+    width: 150px;
+    margin-bottom: 20px;
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    border: 2px solid transparent;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.track.active {
+    background-color: #333;
+    transform: scale(1.2);
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+.track-solo-icon {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #333;
+    border-radius: 50%;
+    padding: 8px;
+}
+
+.track-muted-icon {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #333;
+    border-radius: 50%;
+    padding: 8px;
+}
+
+
+
+
+/* menu edit menu */
+
+
+#menuLayoutEditFadeBackground {
+    background: #fff6;
+    backdrop-filter: blur(1.5px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000000;
+}
+
+.unused:hover {
+    background-color: #eee;
+    border-radius: 50%;
+}
+
+
+#menuLayoutEditMenu {
+    background: #fff;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.5) 12px 12px 30px;
+    border-radius: 8px;
+    z-index: 10000000;
+}
+
+#menuLayoutEditMenu button {
+    display: block;
+    background-color: #494949;
+    color: white;
+    border-radius: 8px;
+    border: none;
+    margin: 4px;
+    padding: 5px 8px 6px 8px;
+}
+
+#menuLayoutEditMenu button:hover {
+    background-color: #638fc1;
+    cursor: pointer;
+}
+
+
+.buttonContainer {
+    height: 250px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}

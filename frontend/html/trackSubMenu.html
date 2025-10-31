@@ -1,0 +1,74 @@
+<div class="fretmenu" id="trackSubMenu">
+    <div class="string">
+        <div class="fret"></div>
+        <div class="fret"></div>
+        <div class="fret"></div>
+        <div class="fret"></div>
+        <div class="fret"></div>
+    </div>
+    <div class="string">
+        <div class="fret"></div>
+        <div class="fret"></div>
+        <div class="fret"></div>
+        <div class="fret"></div>
+        <div class="fret"></div>
+    </div>
+    <div class="string">
+        <div class="fret"></div>
+        <div class="fret"></div>
+        <div class="fret"></div>
+        <div class="fret"></div>
+        <div class="fret"></div>
+    </div>
+    <div class="string">
+        <div class="fret"></div>
+        <div class="fret">
+            <div class="fret-marker toggle-button" onclick="trackMenuSoloSelected(true)"
+                id="trackMenuSoloSelectedButton" title="Solo Selected Track">
+                <img src="./resources/svg/light/headphones.svg" alt="Solo Selected Track" class="fret-menu-icon" />
+            </div>
+        </div>
+        <div class="fret">
+            <div class="fret-marker" onclick="trackMenuMoveSelectionUp()" id="trackMenuMoveSelectionUpButton" title="Move Selection Up">
+                <img src="./resources/codicons/light/triangle-up.svg" alt="Move Selection Up" class="fret-menu-icon" />
+            </div>
+        </div>
+        <div class="fret">
+            <div class="fret-marker toggle-button" onclick="trackMenuMuteSelected(true)"
+                id="trackMenuMuteSelectedButton" title="Mute Selected Track">
+                <img src="./resources/svg/light/mute.svg" alt="Mute Selected Track" class="fret-menu-icon" />
+            </div>
+        </div>
+        <div class="fret"></div>
+    </div>
+    <div class="string">
+        <div class="fret"></div>
+        <div class="fret">
+            <div class="fret-marker" onclick="fretMenuToggleTrackMenu(true)" id="fretMenuTrackMenuButton_2"
+                title="Toggle Track Menu">
+                <img src="./resources/svg/light/guitar.svg" alt="Toggle Track Menu" class="fret-menu-icon" />
+            </div>
+        </div>
+        <div class="fret">
+            <div class="fret-marker" onclick="trackMenuMoveSelectionDown()" id="trackMenuMoveSelectionDownButton"
+                title="Move Selection Down">
+                <img src="./resources/codicons/light/triangle-down.svg" alt="Move Selection Down"
+                    class="fret-menu-icon" />
+            </div>
+        </div>
+        <div class="fret">
+            <div class="fret-marker" onclick="trackMenuMuteAll(true)" id="trackMenuMuteAllButton"
+                title="Mute All Tracks">
+                <img src="./resources/svg/light/mute-all.svg" alt="Mute All Tracks" class="fret-menu-icon" />
+            </div>
+        </div>
+        <div class="fret"></div>
+    </div>
+    <div class="string"></div>
+
+    <div class="tracks-panel" id="tracksPanel">
+        <div class="tracks" id="tracks"></div>
+    </div>
+
+    <div class="status-message" id="statusMessageTrackMenu"></div>
+</div>

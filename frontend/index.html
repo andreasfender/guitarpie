@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>TabCtrl</title>
+    <link rel="icon" href="./resources/tabctrl-logo_1.png" />
+    <script src="https://cdn.jsdelivr.net/npm/@coderline/alphatab@latest/dist/alphaTab.js"></script>
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <link rel="stylesheet" type="text/css" href="./style/style.css" />
+    <link rel="stylesheet" type="text/css" href="./style/fretboard.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+    <div class="at-wrap">
+        <div class="at-overlay">
+            <div class="spinner"></div>
+        </div>
+        <div class="at-content">
+            <div class="at-viewport" id="at-viewport">
+                <div class="at-main"></div>
+                <div class="at-track-list"></div>
+            </div>
+        </div>
+
+        <!-- Start Content (visible when no song is selected) -->
+        <div class="start-content" id="start-content">
+            <div class="background"></div>
+            <img src="./resources/tabctrl-logo_1.png" alt="Logo" class="start-page-logo" />
+            <div style="flex-direction: column">
+                <div class="search-actions" id="search-actions">
+                    <input type="text" id="searchBar" placeholder="Search songs..." />
+                    <div class="action-buttons">
+                        <img id="uploadButton" class="action-btn" src="./resources/codicons/dark/add.svg"
+                            alt="Upload" />
+                        <img id="deleteButton" class="action-btn" src="./resources/codicons/dark/trash.svg"
+                            alt="Delete" />
+                    </div>
+                </div>
+                <ul id="song-list-start-page">
+                    <div class="spinner"
+                        style="position: relative; top: 40%; left: 50%; transform: translate(-50%, -50%)"></div>
+                </ul>
+                <form id="upload-form-start-page" enctype="multipart/form-data">
+                    <!-- Hidden file input used by the Upload button -->
+                    <input type="file" id="file-input" accept=".gp, .gp3, .gp4, .gp5" style="display: none" />
+                </form>
+            </div>
+        </div>
+
+        <!-- Header -->
+        <div class="header" id="header">
+            <div class="header-content">
+                <div class="header-content-left-side">
+                    <a class="btn" id="toggleSidebar">
+                        <img src="./resources/codicons/light/list-unordered.svg" alt="List" class="icon" />
+                    </a>
+                    <a class="btn at-player-stop">
+                        <img src="./resources/codicons/light/debug-reverse-continue.svg" alt="Backward" class="icon" />
+                    </a>
+                    <a class="btn at-player-play-pause" id="playPauseButton">
+                        <img src="./resources/codicons/light/play.svg" alt="Play" class="icon" id="playPauseIcon" />
+                    </a>
+                    <div class="at-song-position" style="font-weight: 200; margin: 0 15px">00:00 / 00:00</div>
+                </div>
+
+                <div class="header-content-middle">
+                    <div class="at-instrument">
+                        <select id="instrumentDropdown"></select>
+                    </div>
+                </div>
+
+                <div class="header-content-right-side">
+                    <a class="btn at-count-in" title="Toggle count-in">
+                        <img src="./resources/svg/light/count.svg" alt="Countdown" class="icon" />
+                    </a>
+                    <a class="btn at-metronome" title="Toggle metronome">
+                        <img src="./resources/svg/light/metronome.svg" alt="Metronome" class="icon" />
+                    </a>
+                    <a class="btn at-loop" title="Toggle looping">
+                        <img src="./resources/codicons/light/debug-restart.svg" alt="Loop" class="icon" />
+                    </a>
+
+                    <div class="vertical-separator"></div>
+
+                    <a class="btn" id="toggleSettingsMenu">
+                        <img src="./resources/codicons/light/settings-gear.svg" alt="More settings" class="icon" />
+                    </a>
+
+                    <a class="btn at-home" title="Back to home">
+                        <img src="./resources/codicons/light/home.svg" alt="Home" class="icon" />
+                    </a>
+                    <div class="vertical-separator"></div>
+                    <a class="btn at-pin" id="pinHeaderButton" title="Pin menu to disable auto-hiding">
+                        <img src="./resources/codicons/light/pin.svg" alt="Pin" class="icon" />
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-content">
+                <a href="#" class="close-btn" id="closeSidebar">&times;</a>
+                <h3>Available Songs</h3>
+                <ul id="song-list-sidebar"></ul>
+            </div>
+        </div>
+
+        <!-- Settings Menu -->
+        <div class="menu header-settings-menu" id="header-settings-menu">
+            <div class="at-zoom">
+                <select id="zoomDropdown">
+                    <option value="25">Zoom: 25%</option>
+                    <option value="50">Zoom: 50%</option>
+                    <option value="75">Zoom: 75%</option>
+                    <option value="90">Zoom: 90%</option>
+                    <option value="100" selected>Zoom: 100%</option>
+                    <option value="110">Zoom: 110%</option>
+                    <option value="125">Zoom: 125%</option>
+                    <option value="150">Zoom: 150%</option>
+                    <option value="200">Zoom: 200%</option>
+                </select>
+            </div>
+            <div class="at-layout" style="display: none;">
+                <select id="layoutDropdown">
+                    <option value="horizontal">Horizontal</option>
+                    <option value="page" selected>Page</option>
+                </select>
+            </div>
+            <div class="at-rhythm-notation">
+                <select id="staveProfileDropdown">
+                    <!-- <option>Hidden</option> -->
+                    <option selected>Show tab</option>
+                    <!-- <option>Default</option> -->
+                    <option>Show score</option>
+                    <option>Show tab and score</option>
+                    <!-- <option>TabMixed</option> -->
+                </select>
+            </div>
+            <div class="at-rhythm-notation" style="display: none;">
+                <select id="rhythmNotationDropdown">
+                    <option>Hidden</option>
+                    <option>Beams</option>
+                    <option selected>Bars</option>
+                </select>
+            </div>
+
+            <div class="menu-separator">
+                <hr style="opacity: 0.5" />
+            </div>
+
+            <div class="at-tick" style="display: none;">
+                <input class="tick-box" type="checkbox" id="enlargePieMenuCheckbox" value="false" />
+                <label class="tick-box-label" for="enlargePieMenuCheckbox">Larger pie menu</label>
+            </div>
+
+            <div class="at-tick" style="display: none;"
+                title="Close the whole menu when you exit a submenu, instead of going back to the main menu">
+                <input class="tick-box" type="checkbox" id="exitOnSubMenuCloseCheckbox" value="false" />
+                <label class="tick-box-label" for="exitOnSubMenuCloseCheckbox">Exit from sub menu</label>
+            </div>
+            <div class="at-tick"
+                title="Useful for new users of the pie menu, requires to play a note twice to perform a menu action">
+                <input class="tick-box" type="checkbox" id="fretMenuDoubleClickModeCheckbox" value="false" />
+                <label class="tick-box-label" for="fretMenuDoubleClickModeCheckbox">Double hit mode</label>
+            </div>
+
+            <div class="at-tick">
+                <input class="tick-box" type="checkbox" id="pauseOnSilenceCheckbox" value="true" checked />
+                <label class="tick-box-label" for="pauseOnSilenceCheckbox">Pause on silence</label>
+            </div>
+
+            <div class="at-slider" style="display: none;">
+                Menu oppacity
+                <input type="range" min="0" max="100" value="100" class="slider" id="pieMenuOppacitySlider"
+                    style="margin-top: 15px" />
+            </div>
+
+            <div class="menu-separator">
+                <hr style="opacity: 0.5" />
+            </div>
+
+            <a class="btn at-pie-menu" id="showFretMenuButton">
+                <img src="./resources/svg/grid-round.svg" alt="Open pie menu" class="icon" /> Open pie menu
+            </a>
+            <a class="btn at-pie-menu-mirror" id="mirrorFretMenuButton" style="color: white">
+                <img src="./resources/svg/arrows-up-down.svg" alt="Flip Pie Menu Up/Down" class="icon" />
+                Flip string order
+            </a>
+
+
+            <a class="btn at-pie-menu-reset" id="resetFretMenuButton">
+                <img src="./resources/codicons/light/debug-restart.svg" alt="Reset Menu Layout to Default"
+                    class="icon" />
+                Reset menu layout
+            </a>
+            <a class="btn at-pie-menu-import" id="importFretMenuButton">
+                <input type="file" id="layoutFileInput" style="display: none;" accept=".json" />
+                <img src="./resources/svg/folder-open.svg" alt="Import Pie Menu Layout" class="icon" />
+                Load menu layout
+            </a>
+            <a class="btn at-pie-menu-export" id="exportFretMenuButton">
+                <img src="./resources/svg/download.svg" alt="Export Menu Layout" class="icon" />
+                Save menu layout
+            </a>
+        </div>
+
+        <div class="fretMenuMainContainer">
+            <div id="fretMenuContainer"></div>
+            <div id="songSubMenuContainer"></div>
+            <div id="toolsSubMenuContainer"></div>
+            <div id="trackSubMenuContainer"></div>
+            <div id="regionSubMenuContainer"></div>
+            <div id="homeSubMenuContainer"></div>
+            <div id="unusedOptionsContainer"></div>
+        </div>
+    </div>
+
+    <template id="at-track-template">
+        <div class="at-track">
+            <div class="at-track-details">
+                <div class="at-track-name"></div>
+            </div>
+        </div>
+    </template>
+
+    <div id="matching-sim-spinner" class="matching-sim-spinner" style="display: none">
+        <div class="sim-spinner"></div>
+    </div>
+
+    <div id="pre-processing-success-overlay"></div>
+    <div id="pre-processing-error-overlay"></div>
+
+    <div class="floating-status">
+        <div class="floating-status-item" id="zoom-indicator"></div>
+        <div class="floating-status-item" id="tempo-indicator"></div>
+        <div class="floating-status-item" id="volume-indicator"></div>
+    </div>
+
+    <div class="floating-buttons">
+        <img class="floating-button" id="pre-processing-loading-icon" src="./resources/svg/dark/guitar.svg" />
+        <img class="floating-button" id="websocket-disconnected-icon"
+            src="./resources/codicons/dark/debug-disconnect.svg" onclick="restartWebSockets()" />
+        <img class="floating-button" id="count-in-indicator" src="./resources/svg/dark/count.svg"
+            onclick="toggleCountIn()" />
+        <img class="floating-button" id="metronome-indicator" src="./resources/svg/dark/metronome.svg"
+            onclick="toggleMetronome()" />
+        <img class="floating-button" id="loop-indicator" src="./resources/codicons/dark/debug-restart.svg"
+            onclick="toggleLoop()" />
+        <img class="floating-button" id="fret-menu-locked-indicator" src="./resources/codicons/dark/lock.svg"
+            onclick="unlockFretMenu()" />
+    </div>
+</body>
+
+<script src="./src/index.js"></script>
+
+</html>

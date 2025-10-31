@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+ <g class="layer">
+  <title>Layer 1</title>
+  <path clip-rule="evenodd" d="m1.5,5l2.79,0l3.86,-3.83l0.85,0.35l0,13l-0.85,0.33l-3.86,-3.85l-2.79,0l-0.5,-0.5l0,-5l0.5,-0.5zm3.35,5.17l3.15,3.14l0,-10.58l-3.15,3.12l-0.35,0.15l-2.5,0l0,4l2.5,0l0.35,0.17zm9.38,-4.11l0.71,0.71l-1.73,1.73l1.73,1.73l-0.71,0.71l-1.73,-1.73l-1.73,1.73l-0.71,-0.71l1.73,-1.73l-1.73,-1.73l0.71,-0.71l1.73,1.73l1.73,-1.73z" fill="#ffffff" fill-rule="evenodd" id="svg_1"/>
+ </g>
+</svg>
