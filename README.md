@@ -115,23 +115,21 @@ Note the quotation marks for arguments that contain spaces.
 
 ## Testing
 
-### Testing note detection (Basic Pitch)
+### Testing backend-frontend communication
 
-To test the note detection (based on Basic Pitch), you can use the following script:
+To test the communication between the websocket and the frontend, you can type a MIDI note ID and press enter inside the terminal.
+This emulates a played note, meaning that the frontend reacts accordingly if it is within the range of allowed notes for menu interaction.
+For instance, typing 62 and pressing enter sends a _D4_ note to TabCtrl (use a MIDI note chart of the general MIDI standard to map numbers to notes).
+
+### Testing note detection
+
+To only test the note detection (based on Basic Pitch), you can use the following script:
 
     python -m backend.testing.midi_test_bp
 
 This script simply prints detected note events (without a websocket).
 The optional command line arguments are the same as with the _midi_websocket.py_ above.
 The ```activate_profile``` function described above is also called, so that the detection can be tested with specific settings.
-
-### Testing websocket connection
-
-To test the connection between the websocket and the frontend, you can type a MIDI note ID and press enter inside the terminal.
-For instance, typing 62 and pressing enter sends a _D4_ note (use a MIDI note chart of the general MIDI standard to map numbers to notes).
-To test only the MIDI conversion from audio input (without the websocket), you can execute
-
-
 
 ## Other tips and comments
 
