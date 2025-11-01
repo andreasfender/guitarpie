@@ -7,10 +7,12 @@ At his point, there is no interface for automatic setup and calibration.
 
 GuitarPie: Using the Fretboard of an Electric Guitar for Audio-Based Pie Menu Interaction.<br />
 Frank Heyen, Marius Labudda, Michael Sedlmair, Andreas Fender.<br />
-ACM UIST 2025. https://dl.acm.org/doi/10.1145/3746059.3747799
+ACM UIST 2025.
 
-Please note that this repository only contains the core GuitarPie implementation and not the additional audio processing features described in the paper.
-Specifically, _song bookmarks_ and custom _audio commands_ are not included.
+Links:  [Paper on ACM DL](https://dl.acm.org/doi/10.1145/3746059.3747799), [Paper PDF (direct download)](https://www.andreasfender.com/publications/PDFs/GuitarPie_authorgenerated.pdf), [Overview video (YouTube)](https://www.youtube.com/watch?v=ItJGNO-IQDw).
+
+Please note that this repository only contains the core GuitarPie implementation and *not* the additional audio processing features described in the paper.
+Specifically, _song bookmarks_ and custom _audio commands_ are *not* included.
 
 ## Repository Overview
 
