@@ -56,7 +56,7 @@ The respository was tested with [Python 3.9.2](https://www.python.org/downloads/
 
 ### Starting backend
 
-In the project root, execute the following commands, each from a terminal.
+In the project root, execute the following commands, each from a different terminal.
 
 1. Start the MIDI stream WebSocket:
 
@@ -77,15 +77,15 @@ If you want to use TabCtrl with mouse and keyboard only, then it is enough to st
 
 ### Starting frontend
 
-Access the web app at http://localhost:8000/frontend.
-If the backend HTTP server is running, then the TabCtrl main menu with the song selection should appear.
+As long as the HTTP server is running, you can access the web app at http://localhost:8000/frontend (starting the HTTP server opens a browser with the address automatically, but only once during startup).
+The TabCtrl main menu with the song selection should appear.
 
-Important: Normally, the connection to the WebSocket is established automatically during startup, if the backend is running upon starting TabCtrl.
+**Important:** Normally, the connection to the WebSocket is established automatically during startup, if the backend is running upon starting TabCtrl.
 If at any time you see a pulsating connection icon in the lower-left corner of TabCtrl, then this means that the WebSocket (the MIDI backend) is not connected.
 Make sure _midi_websocket.py_ is running and click on the connection icon to establish the connection.
 You can also do a hard refresh to restart TabCtrl, which also initiates a connection attempt.
 
-## Configuring
+## Configuration
 
 The backend accepts optional command line arguments, in particular profile:_profile_name_ and user:_username_.
 Take a look at the ```activate_profile``` function inside the _backend/midi_streams/midi_stream_bp.py_ file.
