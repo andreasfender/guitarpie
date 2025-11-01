@@ -141,8 +141,9 @@ The ```activate_profile``` function described above is also called, so that the 
 
 ## Using a MIDI device instead of Basic Pitch
 
-To interact with TabCtrl, you can also use a physical MIDI device (for instance a guitar MIDI pickup device) or external MIDI software (e.g., Jam Origin's MIDI Guitar).
+Instead of using an audio stream and Basic Pitch, you can also use a physical MIDI device (for instance a guitar MIDI pickup device) or external MIDI software (e.g., Jam Origin's MIDI Guitar).
 In this case, add `--use-midi-port` as command line parameter.
 You might have to change the device name in _backend/midi_stream_device.py_
 `loopMIDI_ports = [p for p in available_ports if "TriplePlay Connect 1" in p]`.
-Note that the other command line arguments (e.g., profile and user) and settings are not valid when using a MIDI device, as they are specific to audio devices.
+Note that the other command line arguments (e.g., profile and user) are specific to audio devices and not MIDI devices.
+So the configuration described above is not valid when using a MIDI port.
