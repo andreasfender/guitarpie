@@ -133,15 +133,15 @@ The ```activate_profile``` function described above is also called, so that the 
 
 ## Other tips and comments
 
-- Make sure that all "audio enhancements" are turned off in your operating system for the audio device that you are using (your operating system might suppress non-voice input by default before it the audio stream reaches the application). Do a test recording to make sure your device works well with musical input.
-- CTRL+O toggles PieMenu
-- If the page is broken or you want to reset settings, reset the browser-stored menu configuration with `localStorage.clear()` in the browser console.
+- Make sure that all "audio enhancements" are turned off in your operating system for the audio device that you are using (your operating system might suppress non-voice input by default before the audio stream reaches the application). It is recommended to do a test recording to make sure your device works well with musical input.
+- CTRL+O inside TabCtrl toggles GuitarPie. Use this to test specific functionalities with the mouse or to customize the menu layout (see next point).
 - The GuitarPie menu layout of the TabCtrl frontend can be customized by right-clicking with the mouse on menu elements or empty slots while the menu is open. The pie menu layout can be reset from the main menu at the top.
-- Consider creating shell/bash scripts or Visual Studio Code Tasks to streamline the backend and frontend startup with the commands listed above.
+- If the page is broken or you want to reset settings, reset the browser-stored menu configuration with `localStorage.clear()` in the browser console.
+- Consider creating shell/bash scripts or *tasks* in Visual Studio Code to streamline the backend and frontend startup.
 
 ## Using a MIDI device instead of Basic Pitch
 
-You can also use a physical MIDI device (for instance a guitar MIDI pickup device) or external MIDI software (e.g., Jam Origin's MIDI Guitar).
+To interact with TabCtrl, you can also use a physical MIDI device (for instance a guitar MIDI pickup device) or external MIDI software (e.g., Jam Origin's MIDI Guitar).
 In this case, add `--use-midi-port` as command line parameter.
 You might have to change the device name in _backend/midi_stream_device.py_
 `loopMIDI_ports = [p for p in available_ports if "TriplePlay Connect 1" in p]`.
