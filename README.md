@@ -1,4 +1,6 @@
 This repository contains the reference implementation of the GuitarPie technique as part of our tablature interface TabCtrl (both are described in our UIST 25 publication linked below).
+Our implementation utilizes a real-time streaming variant of [Basic Pitch](https://github.com/spotify/basic-pitch) to enable the use of audio signals from an electric guitar for menu interaction.
+
 Please note that this project is a research prototype and requires manual setup and parameter tweaking.
 At his point, there is no interface for automatic setup and calibration.
 
@@ -115,9 +117,13 @@ Note the quotation marks for arguments that contain spaces.
 
 ### Testing note detection (Basic Pitch)
 
-The _backend.midi_websocket_ script prints note events by default and every note is sent to the frontend.
-This script simply prints detected note events in the console.
-The optional command line arguments are the same as with the _midi_websocket.py_ above and it also calls the ```activate_profile``` function.
+To test the note detection (based on Basic Pitch), you can use the following script:
+
+    python -m backend.testing.midi_test_bp
+
+This script simply prints detected note events (without a websocket).
+The optional command line arguments are the same as with the _midi_websocket.py_ above.
+The ```activate_profile``` function described above is also called, so that the detection can be tested with specific settings.
 
 ### Testing websocket connection
 
@@ -125,7 +131,7 @@ To test the connection between the websocket and the frontend, you can type a MI
 For instance, typing 62 and pressing enter sends a _D4_ note (use a MIDI note chart of the general MIDI standard to map numbers to notes).
 To test only the MIDI conversion from audio input (without the websocket), you can execute
 
-    python -m backend.testing.midi_test_bp
+
 
 ## Other tips and comments
 
