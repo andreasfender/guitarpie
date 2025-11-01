@@ -1,5 +1,6 @@
 This repository contains the reference implementation of the GuitarPie technique as part of our tablature interface TabCtrl (both are described in our UIST 25 publication linked below).
-Please note that this project is a research prototype and requires manual setup and parameter tweaking, as there is no interface for automatic setup and calibration at this point.
+Please note that this project is a research prototype and requires manual setup and parameter tweaking.
+At his point, there is no interface for automatic setup and calibration.
 
 
 ### Publication
@@ -9,7 +10,7 @@ Frank Heyen, Marius Labudda, Michael Sedlmair, Andreas Fender.<br />
 ACM UIST 2025. https://dl.acm.org/doi/10.1145/3746059.3747799
 
 Please note that this repository only contains the core GuitarPie implementation and not the additional audio processing features described in the paper.
-Specifically, _song bookmarks_ and _audio shortcuts_ are not included.
+Specifically, _song bookmarks_ and custom _audio commands_ are not included.
 
 ## Repository Overview
 
@@ -124,14 +125,13 @@ To test only the MIDI conversion from audio input (without the websocket), you c
 
     python -m backend.testing.midi_test_bp
 
-
-
 ## Other tips and comments
 
 - Make sure that all "audio enhancements" are turned off in your operating system for the audio device that you are using (your operating system might suppress non-voice input by default before it the audio stream reaches the application). Do a test recording to make sure your device works well with musical input.
 - CTRL+O toggles PieMenu
 - If the page is broken or you want to reset settings, reset the browser-stored menu configuration with `localStorage.clear()` in the browser console.
-- Consider creating shell/bash scripts or Visual Studio Code Tasks to streamline backend and frontend startup with the commands listed above.
+- The GuitarPie menu layout of the TabCtrl frontend can be customized by right-clicking with the mouse on menu elements or empty slots while the menu is open. The pie menu layout can be reset from the main menu at the top.
+- Consider creating shell/bash scripts or Visual Studio Code Tasks to streamline the backend and frontend startup with the commands listed above.
 
 ## Using a MIDI device instead of Basic Pitch
 
